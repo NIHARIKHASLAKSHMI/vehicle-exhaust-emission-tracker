@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rotate Image</title>
+<style type="text/css">
+var angle = 0;
+
+/*function rotateImage() {
+  angle += 45;
+  img.style.transform = 'rotate(' + angle + 'deg)';
+}*/
+</style>
+</head>
+<body>
+  <img id="myImage" src="../../static/vv/c4.png" alt="Image">
+  <script>
+// Get the image element
+var img = document.getElementById('myImage');
+
+// Set initial position (centered)
+var posX = 0;
+var posY = 300;
+
+// Function to move the image in a 45-degree angle
+function moveImage() {
+    // Calculate new position based on 45-degree angle
+    posX += 10; // Adjust this value to control the horizontal movement
+    posY -= 5; // Adjust this value to control the vertical movement
+    
+    // Apply translation transformation
+    img.style.transform = `translate(${posX}px, ${posY}px)`;
+}
+
+// Call moveImage function to start movement
+setInterval(moveImage, 30); // Adjust the interval as needed
+
+  </script>
+</body>
+</html>

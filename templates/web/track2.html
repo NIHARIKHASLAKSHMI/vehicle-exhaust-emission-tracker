@@ -1,0 +1,40 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+    // Function to reload the page content via AJAX
+    function reloadContent() {
+        $.ajax({
+            url: "/track2", // Current page URL
+            type: 'GET',
+            success: function(data) {
+                // Replace the content of the body with the fetched content
+                $('body').html($(data).find('body').html());
+            },
+            error: function(xhr, status, error) {
+                console.error('Error:', error);
+            }
+        });
+    }
+
+    // Reload content every 10 seconds
+    setInterval(reloadContent, 10000);
+});
+
+</script>
+
+
+</head>
+
+<body>
+
+<div id="contentToUpdate">
+{{data[0]}}
+</div>
+
+</body>
+</html>

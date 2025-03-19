@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Move Image within a Box</title>
+<style>
+    .container {
+    position: relative;
+    width: 952px; /* Set width of container */
+    height: 402px; /* Set height of container */
+    border: 2px solid #000; /* Optional: border for visualization */
+	overflow: hidden;
+	background-image:url(../../static/img/road2.png);
+}
+
+#movingImage {
+    position: absolute;
+    top: 300px; /* Initial top position */
+    left: 50px; /* Initial left position */
+    transition: top 0.5s, left 0.5s; /* Smooth transition animation */
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <img id="movingImage" src="../../static/vv/cc2.png" alt="Image" class="image">
+	<img id="movingImage" src="../../static/vv/c1.png" alt="Image" class="image">
+</div>
+
+<script>
+    // Function to move the image within the container
+function moveImage(sourceX, sourceY, destinationX, destinationY) {
+    var movingImage = document.getElementById("movingImage");
+    var container = document.querySelector(".container");
+
+    // Calculate the delta
+    var deltaX = destinationX - sourceX;
+    var deltaY = destinationY - sourceY;
+
+    // Calculate the new position
+    var newX = movingImage.offsetLeft + deltaX;
+    var newY = movingImage.offsetTop + deltaY;
+
+    // Check if the new position is within the container boundaries
+    var containerRect = container.getBoundingClientRect();
+    newX = Math.max(Math.min(newX, containerRect.width - movingImage.width), 0);
+    newY = Math.max(Math.min(newY, containerRect.height - movingImage.height), 0);
+
+    // Apply the new position
+    movingImage.style.left = newX + "px";
+    movingImage.style.top = newY + "px";
+}
+
+// Example usage
+var sourceX = 10;
+var sourceY = 400;
+var destinationX = 900;
+var destinationY = 450;
+
+moveImage(sourceX, sourceY, destinationX, destinationY);
+</script>
+
+</body>
+</html>

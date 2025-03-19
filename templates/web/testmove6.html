@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Car Animation</title>
+<style type="text/css">
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.road {
+  background-image: url('../../static/img/road2.png'); /* Road background image */
+  background-size: cover;
+  width: 952px;
+  height: 402px; /* Set the road height to full viewport height */
+  position: relative;
+  overflow: hidden;
+}
+
+.car {
+  width: 100px; /* Width of the car image */
+  height: 50px; /* Height of the car image */
+  background-image:url('../../static/vv/cc2.png');/* Car image */
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
+}
+
+.car1 {
+  animation: moveCar1 5s linear infinite; /* Animation for car 1 */
+}
+
+.car2 {
+  animation: moveCar2 5s linear infinite; /* Animation for car 2 */
+}
+
+@keyframes moveCar1 {
+  0% { left: -100px; bottom: 0; } /* Start position of car 1 */
+  100% { left: calc(100% + 100px); bottom: calc(100vh + 40px); } /* End position of car 1 */
+}
+
+@keyframes moveCar2 {
+  0% { left: -100px; bottom: 0; } /* Start position of car 2 */
+  100% { left: calc(100% + 100px); bottom: calc(100vh + 50px); } /* End position of car 2 */
+}
+
+</style>
+</head>
+<body>
+<div class="road">
+  <div class="car car1"></div>
+  <div class="car car2"></div>
+</div>
+
+</body>
+</html>

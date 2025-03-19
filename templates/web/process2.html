@@ -1,0 +1,406 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vehicle Exhaust</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link href="../../static/web/css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <!--<div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>-->
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header" style="background-color:#003366">
+            <div class="brand-logo">
+                <a href="">
+				<h2 style="color:#FFFFFF">Admin</h2>
+                   <!-- <b class="logo-abbr"><img src="../static/images/logo.png" alt=""> </b>
+                    <span class="logo-compact"><img src="../static/images/logo-compact.png" alt=""></span>
+                    <span class="brand-title">
+                        <img src="../static/images/logo-text.png" alt="">
+                    </span>-->
+                </a>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">    
+            <div class="header-content clearfix">
+                
+                <div class="nav-control">
+                    <div class="hamburger">
+                        <span class="toggle-icon"><i class="icon-menu"></i></span>
+                    </div>
+                </div>
+                <div class="header-left">
+                   <!-- <div class="input-group icons">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
+                        </div>
+                        <input type="search" class="form-control" placeholder="Search Dashboard" aria-label="Search Dashboard">
+                        <div class="drop-down   d-md-none">
+							<form action="#">
+								<input type="text" class="form-control" placeholder="Search">
+							</form>
+                        </div>
+                    </div>-->
+                </div>
+                <div class="header-right">
+                    <ul class="clearfix">
+                        
+                       
+                        <li class="icons dropdown">
+                            <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
+                                <span class="activity active"></span>
+                                <img src="../../static/web/images/profile.jpg" height="40" width="40" alt="">
+                            </div>
+                            <div class="drop-down dropdown-profile   dropdown-menu">
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                       
+                                        <li><a href="/logout"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="nk-sidebar">           
+            <div class="nk-nav-scroll">
+                <ul class="metismenu" id="menu">
+                    
+                   
+					<li>
+                        <a class="has-arrow" href="/admin" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
+                        </a>
+                        
+                    </li>
+					
+					<li>
+                        <a class="" href="/add_rto" aria-expanded="false">
+                            <i class="icon-grid menu-icon"></i><span class="nav-text">RTOD</span>
+                        </a>
+					</li>	
+					<li>
+                        <a class="" href="/add_cpcb" aria-expanded="false">
+                            <i class="icon-grid menu-icon"></i><span class="nav-text">CPCB</span>
+                        </a>
+					</li>	
+					
+					
+					<li>
+                        <a class="" href="/logout" aria-expanded="false">
+                           <i class="icon-notebook menu-icon"></i><span class="nav-text">Logout</span>
+                        </a>
+					</li>	
+						
+                  
+                </ul>
+            </div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+
+            <div class="row page-titles mx-0">
+                <div class="col p-md-0">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
+                        
+                    </ol>
+                </div>
+            </div>
+            <!-- row -->
+
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="form-validation">
+								
+								<div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="active-member">
+								<h4 align="center">Preprocessing</h4>
+								
+								
+						<div class="row">
+						<div class="col-md-12">
+			  <div style="width:100%; height:400px; overflow:auto">
+  <table width="80%" border="1" align="center" class="table">
+    <tr>
+      <th>Column</th>
+      <th>Total Counts </th>
+      <th>Dtype</th>
+    </tr>
+	
+
+	
+    <tr>
+      <td>
+	  {% for rs in data[0] %}
+	  		
+	  {{rs}}<br>
+	  {% endfor %}	  </td>
+      <td> 
+	  {% for rs2 in data[1] %}
+	  
+	  {{rs2}}<br>
+	  {% endfor %}</td>
+      <td> 
+	  {% for rs3 in data[2] %}
+	  
+	  {{rs3}}<br>
+	  {% endfor %}</td>
+    </tr>
+  </table>
+  </div>
+  
+  <p></p>
+  <div style="width:100%; height:400px; overflow:auto">
+			<table class="table table-striped thead-dark table-bordered table-hover">
+			<tr>
+			<th>#</th>
+			<th>PM2.5</th>
+			<th>PM10</th>
+			<th>NO</th>
+			<th>NO2</th>
+			<th>NOx</th>
+			<th>NH3</th>
+			<th>CO</th>
+			<th>SO2</th>
+			<th>O3</th>
+			<th>Benzene</th>
+			<th>Toluene</th>
+			<th>Xylene</th>
+			</tr>
+			{% for rs5 in data4 %}
+			<tr>
+			<td>{{loop.index}}</td>
+			<td>{{rs5[1]}}</td>
+			<td>
+			{% if rs5[2]==-1 %} 
+		<span style="color:#FF0000">Null</span>
+		{% else %}
+		{{rs5[2]}}
+		{% endif %}
+		
+			</td>
+			<td>
+			{% if rs5[3]==-1 %} 
+		<span style="color:#FF0000">Null</span>
+		{% else %}
+		{{rs5[3]}}
+		{% endif %}
+		
+			</td>
+			<td>
+			{% if rs5[4]==-1 %} 
+		<span style="color:#FF0000">Null</span>
+		{% else %}
+		{{rs5[4]}}
+		{% endif %}
+		
+			</td>
+			<td>
+			{% if rs5[5]==-1 %} 
+		<span style="color:#FF0000">Null</span>
+		{% else %}
+		{{rs5[5]}}
+		{% endif %}
+		
+			</td>
+			<td>
+			{% if rs5[6]==-1 %} 
+		<span style="color:#FF0000">Null</span>
+		{% else %}
+		{{rs5[6]}}
+		{% endif %}
+			
+			</td>
+			<td>
+			{% if rs5[7]==-1 %} 
+		<span style="color:#FF0000">Null</span>
+		{% else %}
+		{{rs5[7]}}
+		{% endif %}
+		
+			</td>
+			<td>
+			{% if rs5[8]==-1 %} 
+		<span style="color:#FF0000">Null</span>
+		{% else %}
+		{{rs5[8]}}
+		{% endif %}
+			
+			</td>
+			<td>
+			{% if rs5[9]==-1 %} 
+		<span style="color:#FF0000">Null</span>
+		{% else %}
+		{{rs5[9]}}
+		{% endif %}
+			
+			</td>
+			<td>
+			{% if rs5[10]==-1 %} 
+		<span style="color:#FF0000">Null</span>
+		{% else %}
+		{{rs5[10]}}
+		{% endif %}
+			
+			</td>
+			<td>
+			{% if rs5[11]==-1 %} 
+		<span style="color:#FF0000">Null</span>
+		{% else %}
+		{{rs5[11]}}
+		{% endif %}
+			
+			</td>
+			<td>
+			{% if rs5[12]==-1 %} 
+		<span style="color:#FF0000">Null</span>
+		{% else %}
+		{{rs5[12]}}
+		{% endif %}
+			
+			</td>
+			</tr>
+			{% endfor %}
+			
+			</table>
+			</div>
+			  <p>&nbsp;</p>
+  
+  <p align="center">Memory usage {{mem}}</p>
+  <p align="center">No. of Columns: {{cols}} </p>
+  <p align="center">No. of Rows: {{rows}} </p>
+  <p align="center">Null Values Count: {{nullcount}}</p>
+ 
+ 
+			</div>
+			</div>		
+			
+			<br>
+			
+				<form name="form1" method="post" action="/calculate_EEI">
+		<div class="row">
+			<div class="col-md-5">
+				
+			</div>
+			<div class="col-md-4">
+			
+			<input type="submit" name="btn" class="btn btn-primary py-3 px-5" value="Feature Extraction">
+			</div>
+		</div>
+		</form>
+								
+								
+								
+                                   
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+								
+								
+								
+                                  
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+        
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Vehicle Exhaust <a href="https://themeforest.net/user/quixlab"></a> </p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="../../static/web/plugins/common/common.min.js"></script>
+    <script src="../../static/web/js/custom.min.js"></script>
+    <script src="../../static/web/js/settings.js"></script>
+    <script src="../../static/web/js/gleek.js"></script>
+    <script src="../../static/web/js/styleSwitcher.js"></script>
+
+    <script src="../../static/web/plugins/validation/jquery.validate.min.js"></script>
+    <script src="../../static/web/plugins/validation/jquery.validate-init.js"></script>
+
+</body>
+
+</html>

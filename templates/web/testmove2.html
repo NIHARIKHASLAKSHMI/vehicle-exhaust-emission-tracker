@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Move Image</title>
+<style type="text/css">
+.container {
+  position: relative;
+  width: 952px; /* Adjust the width and height of the container as needed */
+  height: 402px;
+  border: 1px solid black; /* Border for visualization */
+  overflow: hidden; /* Hide the overflow */
+  background-image:url(../../static/img/road2.png);
+}
+
+#myImage {
+  position: absolute;
+  top: 30;
+  left: 300;
+  transform: translate(-50%, -50%); /* Center the image */
+  transition: transform 2s ease-in-out; /* Smooth transition for movement */
+}
+</style>
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Move Image</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+     <img id="myImage" src="../../static/vv/cc2.png" alt="Image">
+  </div>
+ 
+ <script>
+ // Get the image element
+var img = document.getElementById('myImage');
+
+// Set initial position (centered)
+var posX = 500;
+var posY = 300;
+
+// Function to move the image at a 45-degree angle within the box
+function moveImage() {
+    // Calculate new position based on 45-degree angle
+    posX += 300; // Adjust this value to control the horizontal movement
+    posY += 10; // Adjust this value to control the vertical movement
+    
+    // Apply translation transformation
+    img.style.transform = `translate(${posX}px, ${posY}px) rotate(45deg)`;
+}
+
+// Call moveImage function to start movement
+setInterval(moveImage, 200); // Adjust the interval as needed
+
+ </script>
+ 
+ 
+</body>
+</html>
+
+</body>
+</html>

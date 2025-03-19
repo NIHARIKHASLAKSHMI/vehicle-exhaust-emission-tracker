@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Move Image</title>
+<style type="text/css">
+.container {
+  position: relative;
+  width: 952px; /* Adjust the width and height of the container as needed */
+  height: 402px;
+  border: 1px solid black; /* Border for visualization */
+  overflow: hidden; /* Hide the overflow */
+  background-image:url(../../static/img/road2.png);
+}
+
+#myImage {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  transition: transform 2s ease-in-out; /* Smooth transition for movement */
+}
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <img id="myImage" src="../../static/vv/cc2.png" alt="Image">
+	<img id="myImage2" src="../../static/vv/cc2.png" alt="Image">
+  </div>
+ <script>
+ // Get the image element
+var img = document.getElementById('myImage');
+var img2 = document.getElementById('myImage2');
+
+// Set initial position (bottom-left corner)
+var posX = 0;
+var posY = 300; // Starting position from the bottom
+
+// Set target position (top-right corner)
+var targetX = 950; // Ending position on the right
+var targetY = 300; // Ending position on the top
+
+// Function to move the image from bottom-left to top-right
+function moveImage() {
+    // Calculate new position based on linear interpolation
+    posX += 30; // Adjust this value to control the horizontal movement speed
+    posY -= 10; // Adjust this value to control the vertical movement speed
+    
+    // Apply translation transformation
+    img.style.transform = `translate(${posX}px, ${posY}px)`;
+	img2.style.transform = `translate(${posX}px, ${posY}px)`;
+
+    // Check if the image has reached the target position
+    if (posX >= targetX && posY <= targetY) {
+        clearInterval(animationInterval); // Stop the animation
+    }
+}
+
+// Call moveImage function repeatedly to start movement
+var animationInterval = setInterval(moveImage, 60); // Adjust the interval as needed
+
+ </script>
+</body>
+</html>

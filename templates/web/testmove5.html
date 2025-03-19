@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Animation</title>
+<style type="text/css">
+.car-movement {
+background-image:url(../../static/img/road2.png);
+width: 952px; /* Adjust the width of the road */
+  height: 402px;
+  overflow: hidden;
+  /*font-size: 40px;
+  height: 50px;*/
+}
+
+.car-movement > .car {
+  position: relative;
+  display: inline-block;
+  animation: linear infinite;
+  animation-name: run;
+  animation-duration: 5s;
+}
+
+
+@keyframes run {
+  0% {
+    transform: rotateY(180deg);
+    left: -100px;
+  }
+  50% {
+    transform: rotateY(180deg);
+    left: 100%;
+  }
+  51% {
+    transform: rotateY(0deg);
+    left: calc(100% + 100px);
+  }
+  100% {
+    transform: rotateY(0deg);
+    left: -100px;
+  }
+</style>
+</head>
+<body>
+<div class="car-movement">
+  <div class="car"><img class="car" src="../../static/vv/cc2.png" alt="Car"></div>
+  <div class="car"><img class="car" src="../../static/vv/c1.png" alt="Car"></div>
+</div></body>
+</html>

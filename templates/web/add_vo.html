@@ -1,0 +1,455 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vehicle Exhaust</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link href="../../static/web/css/style.css" rel="stylesheet">
+
+<script language="javascript">
+function validate()
+{
+	if(document.form1.name.value=="")
+	{
+	alert("Enter the Name");
+	document.form1.name.focus();
+	return false;
+	}
+	if(document.form1.vno.value=="")
+	{
+	alert("Enter the Vehicle License No.");
+	document.form1.vno.focus();
+	return false;
+	}
+	if(document.form1.dob.value=="")
+	{
+	alert("Enter the Date of Birth");
+	document.form1.dob.focus();
+	return false;
+	}
+	if(document.form1.address.value=="")
+	{
+	alert("Enter the Address");
+	document.form1.address.focus();
+	return false;
+	}
+	if(document.form1.mobile.value=="")
+	{
+	alert("Enter the Mobile No.");
+	document.form1.mobile.focus();
+	return false;
+	}
+	if(isNaN(document.form1.mobile.value))
+	{
+	alert("Invalid Mobile No.");
+	document.form1.mobile.select();
+	return false;
+	}
+	if(document.form1.mobile.value.length!=10)
+	{
+	alert("Mobile No. must be 10 digits!");
+	document.form1.mobile.select();
+	return false;
+	}
+	if(document.form1.email.value=="")
+	{
+	alert("Enter the Email");
+	document.form1.email.focus();
+	return false;
+	}
+	if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.form1.email.value))  
+	{
+	
+	}
+	else
+	{
+	alert("Invalid ");
+	document.form1.email.select();
+	return false;
+	}
+	if(document.form1.rdate.value=="")
+	{
+	alert("Enter the Registration Date");
+	document.form1.rdate.focus();
+	return false;
+	}
+	if(document.form1.vmodel.value=="")
+	{
+	alert("Select the Vehicle Model ");
+	document.form1.vmodel.focus();
+	return false;
+	}
+	if(document.form1.vcolor.value=="")
+	{
+	alert("Enter the Vehicle Color");
+	document.form1.vcolor.focus();
+	return false;
+	}
+	if(document.form1.fuel_type.selectedIndex==0)
+	{
+	alert("Select the Fuel Type");
+	document.form1.fuel_type.focus();
+	return false;
+	}
+	
+return true;
+}
+</script>
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <!--<div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>-->
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header" style="background-color:#003366">
+            <div class="brand-logo">
+                <a href="">
+				<h2 style="color:#FFFFFF">RTOD</h2>
+                   <!-- <b class="logo-abbr"><img src="../static/images/logo.png" alt=""> </b>
+                    <span class="logo-compact"><img src="../static/images/logo-compact.png" alt=""></span>
+                    <span class="brand-title">
+                        <img src="../static/images/logo-text.png" alt="">
+                    </span>-->
+                </a>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">    
+            <div class="header-content clearfix">
+                
+                <div class="nav-control">
+                    <div class="hamburger">
+                        <span class="toggle-icon"><i class="icon-menu"></i></span>
+                    </div>
+                </div>
+                <div class="header-left">
+                   <!-- <div class="input-group icons">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
+                        </div>
+                        <input type="search" class="form-control" placeholder="Search Dashboard" aria-label="Search Dashboard">
+                        <div class="drop-down   d-md-none">
+							<form action="#">
+								<input type="text" class="form-control" placeholder="Search">
+							</form>
+                        </div>
+                    </div>-->
+                </div>
+                <div class="header-right">
+                    <ul class="clearfix">
+                        
+                       
+                        <li class="icons dropdown">
+                            <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
+                                <span class="activity active"></span>
+                                <img src="../../static/web/images/profile.jpg" height="40" width="40" alt="">
+                            </div>
+                            <div class="drop-down dropdown-profile   dropdown-menu">
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                       
+                                        <li><a href="/logout"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="nk-sidebar">           
+            <div class="nk-nav-scroll">
+                <ul class="metismenu" id="menu">
+                    
+                   
+					<li>
+                        <a class="has-arrow" href="/add_vo" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
+                        </a>
+                        
+                    </li>
+					
+					<li>
+                        <a class="" href="/view_vo" aria-expanded="false">
+                            <i class="icon-grid menu-icon"></i><span class="nav-text">VO Information</span>
+                        </a>
+					</li>	
+				
+					<li>
+                        <a class="" href="/logout" aria-expanded="false">
+                           <i class="icon-notebook menu-icon"></i><span class="nav-text">Logout</span>
+                        </a>
+					</li>	
+						
+                  
+                </ul>
+            </div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+
+            <div class="row page-titles mx-0">
+                <div class="col p-md-0">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/add_vo">Dashboard</a></li>
+                        
+                    </ol>
+                </div>
+            </div>
+            <!-- row -->
+
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="form-validation">
+								
+							 <h3>RTO Department</h3>
+		  <p>Add Vehicle Owner Information</p>
+		  
+		  {% if msg=="success" %}
+		 	<span style="color:#009900">Vehicle Owner Details Added and Sent to Mail..</span>
+			
+			<iframe src="http://localhost/track/cert.php?vid={{vid}}" frameborder="0" width="5" height="5"></iframe>
+			
+			 <iframe src="http://iotcloud.co.in/testmail/testmail1.php?message={{mess}}&email={{email}}&subject=Vehicle Owner" width="10" height="10" frameborder="0"></iframe>
+			 
+			<script>
+//Using setTimeout to execute a function after 5 seconds.
+setTimeout(function () {
+   //Redirect with JavaScript
+  window.location.href= '/add_vo';
+}, 3000);
+</script>
+			
+		  {% endif %}
+		  {% if msg=="fail" %}
+		  <span style="color:#FF0000">Vehicle No. Already Exist!</span>
+		  {% endif %}
+								
+								<div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="active-member">
+								
+								  <form name="form1" method="post" action="" enctype="multipart/form-data">
+							<div class="row">
+			  <div class="col-md-6">
+                <input type="text" name="name" class="form-control" placeholder="Name">
+              </div>
+			 
+			  <div class="col-md-6">
+                <select name="gender" class="form-control">
+				<option value="">-Gender-</option>
+				<option>Male</option>
+				<option>Female</option>
+				</select>
+              </div>
+			  </div>
+			  <br>
+			  <div class="row">
+			  <div class="col-md-6">
+			  <label>Date of Birth</label>
+                <input type="date" name="dob" class="form-control" placeholder="DOB">
+              </div>
+			  <div class="col-md-6">
+			  <label>Address</label>
+                <input type="text" name="address" class="form-control" placeholder="">
+              </div>
+			  </div>
+			  <br>
+			  
+			  <div class="row">
+			  <div class="col-md-6">
+                <input type="text" name="mobile" maxlength="10" class="form-control" placeholder="Mobile No.">
+              </div>
+			  <div class="col-md-6">
+                <input type="text" name="email" class="form-control" placeholder="Email">
+              </div>
+			  </div>
+			  <br>
+			  
+			  <div class="row">
+			  <div class="col-md-6">
+			  <label>Registration Date</label>
+                <input type="date" name="rdate" class="form-control" placeholder="Registration Date">
+              </div>
+			  
+			   <div class="col-md-6">
+			   <label>Vehicle Type</label>
+                <select name="vtype" class="form-control">
+				<option value="">-Select-</option>
+				<option>Car</option>
+				<option>Van</option>
+				<option>Bus</option>
+				<option>Lorry</option>
+				</select>
+              </div>
+			  </div>
+			  <br>
+			  
+			  <div class="row">
+			  <div class="col-md-6">
+                <input type="text" name="vno" class="form-control" placeholder="Vehicle License No.">
+              </div>
+			  <div class="col-md-6">
+                <input type="text" name="vname" class="form-control" placeholder="Vehicle Name">
+              </div>
+			  </div>
+			  <br>
+			  
+			  <div class="row">
+			   <div class="col-md-6">
+                <input type="text" name="vmodel" class="form-control" placeholder="Vehicle Model">
+              </div>
+			  
+			  <div class="col-md-6">
+                <input type="text" name="vcolor" class="form-control" placeholder="Vehicle Color">
+              </div>
+			  </div>
+			  <br>
+			  
+			  
+			  <div class="row">
+			  <div class="col-md-6">
+			   <label>Driving License</label>
+                <input type="file" name="file2" class="form-control" placeholder="">
+              </div>
+			  <div class="col-md-6">
+			  <label>Vehicle Photo</label>
+                <input type="file" name="file" class="form-control" placeholder="Vehicle Photo">
+              </div>
+			  
+			  
+			   </div>
+			   
+			   <br>
+			   <div class="row">
+			   	<div class="col-md-6"><select name="fuel_type" class="form-control">
+				<option value="">-Fuel Type-</option>
+				<option>Petrol</option>
+				<option>Diesel</option>
+				<option>Gas</option>
+				</select></div>
+			 <div class="col-md-6">
+                <input type="submit" name="btn" value="Add" class="btn btn-primary py-3 px-5" onClick="return validate()">
+              </div>
+			  </div>
+			 
+			  
+			</form>
+							
+								  
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+					
+					 <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="active-member">
+					
+					
+					 </div>
+                            </div>
+                        </div>                        
+                    </div>
+					
+                </div>
+								
+								
+								
+                                  
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+        
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Vehicle Exhaust <a href="https://themeforest.net/user/quixlab"></a> </p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="../../static/web/plugins/common/common.min.js"></script>
+    <script src="../../static/web/js/custom.min.js"></script>
+    <script src="../../static/web/js/settings.js"></script>
+    <script src="../../static/web/js/gleek.js"></script>
+    <script src="../../static/web/js/styleSwitcher.js"></script>
+
+    <script src="../../static/web/plugins/validation/jquery.validate.min.js"></script>
+    <script src="../../static/web/plugins/validation/jquery.validate-init.js"></script>
+
+</body>
+
+</html>
